@@ -13,7 +13,6 @@ import {
   UserContainer, EmptyContainer, NotFoundContainer, SearchContainer, DetailsContainer,
 } from './styles';
 import Loader from '../Loader';
-import delay from '../../utils/delay';
 
 export default function Layout() {
   const [user, setUser] = useState({});
@@ -23,8 +22,6 @@ export default function Layout() {
   async function getUser(profile) {
     try {
       setIsLoading(true);
-
-      await delay(500);
 
       const githubUser = await UserService.listUser(profile);
 
